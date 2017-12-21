@@ -4,6 +4,7 @@ PFont foreignFont;
 ArrayList<Stream> streams;
 int textSize = 20;
 int windowWidth;
+boolean recording = false;
 
 void setup() {
   size(1280, 720, P2D);
@@ -40,4 +41,16 @@ void draw() {
     }
   }
   
+  if (recording) {
+    saveFrame("video/####.png");
+    println("Recording");
+  } 
+  
+  println("Framerate: " + frameRate);
+}
+
+void keyPressed() {
+  if (key == 'r' || key == 'R') {
+    recording = !recording;
+  }
 }
