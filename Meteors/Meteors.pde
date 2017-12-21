@@ -1,19 +1,20 @@
 import processing.pdf.*;
 
-PShape baseMap;
-String csv[];
-String data[][];
+PShape baseMap;  // Stores the background image
+String csv[];  // Loaded CSV file
+String data[][];  // Parsed CSV data
 int labelSubset = 9;  // Number of labels to draw
 
 void setup() {
   size(1800, 900);
-  noLoop();
+  noLoop();  // only run once
   
+  // Load the base image
   baseMap = loadShape("WorldMap.svg");
   
+  // Load and parse the CSV
   csv = loadStrings("meteors.csv");
   data = new String[csv.length][6];
-  
   for(int i = 0; i < csv.length; i++) {
     data[i] = csv[i].split(",");
   }
@@ -22,6 +23,7 @@ void setup() {
 void draw() {
   beginRecord(PDF, "meteorStrikes.pdf");
   
+  // Draw the map background image
   shape(baseMap, 0, 0, width, height);
   
   for(int i = 1; i < data.length; i++) {
