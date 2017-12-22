@@ -2,7 +2,7 @@ import processing.pdf.*;
 
 PShape baseMap;  // Stores the background image
 String data[][];  // Parsed CSV data
-int labelSubset = 9;  // Number of labels to draw
+int labelSubset = 20;  // Number of labels to draw
 
 void setup() {
   size(1800, 900);
