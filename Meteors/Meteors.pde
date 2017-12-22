@@ -1,7 +1,6 @@
 import processing.pdf.*;
 
 PShape baseMap;  // Stores the background image
-String csv[];  // Loaded CSV file
 String data[][];  // Parsed CSV data
 int labelSubset = 9;  // Number of labels to draw
 
@@ -12,8 +11,13 @@ void setup() {
   // Load the base image
   baseMap = loadShape("WorldMap.svg");
   
+  // Load the font--may need to change dep. on system
+  PFont f = createFont("Avenir-Medium", 12);
+  textMode(MODEL);
+  textFont(f);
+  
   // Load and parse the CSV
-  csv = loadStrings("meteors.csv");
+  String csv[] = loadStrings("meteors.csv");
   data = new String[csv.length][6];
   for(int i = 0; i < csv.length; i++) {
     data[i] = csv[i].split(",");
