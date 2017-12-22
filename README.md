@@ -2,9 +2,12 @@
 
 Various tutorials and small projects I've worked on in Processing.
 
-All examples were only tested with Processing 3+.
-
 ## Projects
 
-* [Raining code effect from The Matrix](./Matrix)
-* [Map visualization of meteor strikes](./Meteors)
+### [Raining code effect from The Matrix](./Matrix)
+
+![matrix](./Matrix/matrixScreenshot.jpg "matrix raining code effect")
+
+### [Map visualization of meteor strikes](./Meteors)
+
+![meteors](./Meteors/meteorStrikesPost.png "meteorite strike visualization")
